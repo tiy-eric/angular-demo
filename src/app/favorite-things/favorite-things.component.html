@@ -1,0 +1,15 @@
+<table class="table table-striped">
+  <tr>
+    <th>ID</th>
+    <th>Favorite Thing</th>
+  </tr>
+  <tr (click)="onSelect(thing)" *ngFor="let thing of favoriteThingsArray">
+    <td>{{thing.id}}</td>
+    <td>{{thing.thingName}}</td>
+  </tr>
+</table>
+
+<div class="text-center" *ngIf="selectedThing">
+  <label>update thing name: </label>
+  <input type="text" [(ngModel)]="selectedThing.thingName">
+</div>
